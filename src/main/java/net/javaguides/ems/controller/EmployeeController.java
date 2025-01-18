@@ -49,7 +49,7 @@ public class EmployeeController {
 
     // Update Employee API
     @PutMapping("{id}")
-    public ResponseEntity<EmployeeDto> updateEmployee(@PathVariable("id")  Long employeeId,EmployeeDto updateEmployee) {
+    public ResponseEntity<EmployeeDto> updateEmployee(@PathVariable("id")  Long employeeId, @RequestBody EmployeeDto updateEmployee) {
         EmployeeDto employeeDto = employeeService.updateEmployee(employeeId, updateEmployee);
         return ResponseEntity.ok(employeeDto);
     }
